@@ -1,10 +1,13 @@
 .col-12
   .row.nested-fields
     .col-12
-      = f.file_field :img
-    .col-10.mt-2
+      %hr.text-muted
       = f.text_field :title, class: 'form-control', placeholder: Block.human_attribute_name(:title)
-    .col-10.mt-2
-      = f.text_field :content, class: 'form-control', placeholder: Block.human_attribute_name(:content)
-    .col-2.mt-2
+    .col-12.mt-2
+      = f.text_area :content, class: 'form-control', placeholder: Block.human_attribute_name(:content)
+    .col-6.mt-2
+      = f.text_field :position, class: 'form-control', placeholder: Block.human_attribute_name(:position)
+    .col-6.mt-2
+      = f.file_field :img
+    .col-12.mt-2.text-left
       = link_to_remove_association fa_icon('remove'), f, class: 'btn btn-outline-secondary btn-sm'

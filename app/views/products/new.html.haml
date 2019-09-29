@@ -16,13 +16,18 @@
 
           .row
             .col.mt-4
-              = form.select :domain, Product::DOMAINS, include_blank: t('products.select_domain'), class: 'form-control'
+              = form.select :domain, Product::DOMAINS, { include_blank: t('products.select_domain') }, { class: 'form-control' }
 
             .col.mt-4
-              = form.select :device, Product::DEVICES, include_blank: t('products.select_device'), class: 'form-control'
+              = form.select :device, Product::DEVICES, { include_blank: t('products.select_device') }, { class: 'form-control' }
 
             .col.mt-4
-              = form.select :os, Product::OS, include_blank: t('products.select_os'), class: 'form-control'
+              = form.select :os, Product::OS, { include_blank: t('products.select_os') }, { class: 'form-control' }
+
+          .row
+            .col.mt-4
+              = form.select :user_ids, User.all.collect {|u| [u.email, u.id]}, { include_blank: t('products.select_users') }, { multiple: true, size: 5, class: 'form-control' }
+
 
           .row
             .col.mt-4

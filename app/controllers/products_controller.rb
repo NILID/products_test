@@ -16,6 +16,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:title, :domain, :device, :os, blocks_attributes: [:id, :title, :content, :img, :position, :_destroy])
+      params.require(:product).permit(:title, :domain, :device, :os, user_ids: [], blocks_attributes: [:id, :title, :content, :img, :position, :_destroy])
     end
 end

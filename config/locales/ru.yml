@@ -25,6 +25,7 @@ ru:
     select_os: == выберите OC ==
     select_domain: == выберите домен ==
     select_device: == выберите устройство ==
+    select_users: == выберите команду ==
   activerecord:
     models:
       product: продукт
@@ -32,10 +33,20 @@ ru:
       user: пользователь
     attributes:
       block:
-        content: Описание
+        title: Название блока
+        content: Описание блока
+        position: Порядковый номер блока
+        img: Изображение блока
+      blocks:
+        title: Название блока
+        content: Описание блока
+        position: Порядковый номер блока
+        img: Изображение блока
       product:
         title: Название
-        desc: Описание
+        domain: Домен
+        devise: Устройство
+        os: ОС
       user:
         login: Логин
         password: Пароль
