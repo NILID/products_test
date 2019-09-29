@@ -26,7 +26,7 @@
 
           .row
             .col.mt-4
-              %fieldset.bg-light.form-group#blocks
+              %fieldset.bg-light.form-group#help-blocks
                 %legend= t 'products.how_works_section'
                 = form.fields_for :help_blocks do |block|
                   = render partial: 'help_block_fields', locals: { f: block }
@@ -36,10 +36,9 @@
             .col.mt-4
               = form.select :user_ids, User.all.collect {|u| [u.email, u.id]}, { include_blank: t('products.select_users') }, { multiple: true, size: 5, class: 'form-control' }
 
-
           .row
             .col.mt-4
-              %fieldset.bg-light.form-group#services
+              %fieldset.bg-light.form-group#service-blocks
                 %legend= t 'products.get_services'
                 = form.fields_for :service_blocks do |block|
                   = render partial: 'service_block_fields', locals: { f: block }
