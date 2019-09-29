@@ -22,6 +22,7 @@ ru:
     add: Добавить продукт
     adding: Добавление продукта
     how_works_section: Как это работает
+    get_services: Что нужно сделать, чтобы воспользоваться услугой банка
     select_os: == выберите OC ==
     select_domain: == выберите домен ==
     select_device: == выберите устройство ==
@@ -39,7 +40,12 @@ ru:
         content: Описание блока
         position: Порядковый номер блока
         img: Изображение блока
-      blocks:
+      help_blocks:
+        title: Название блока
+        content: Описание блока
+        position: Порядковый номер блока
+        img: Изображение блока
+      service_blocks:
         title: Название блока
         content: Описание блока
         position: Порядковый номер блока

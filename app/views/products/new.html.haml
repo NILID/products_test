@@ -26,17 +26,26 @@
 
           .row
             .col.mt-4
+              %fieldset.bg-light.form-group#blocks
+                %legend= t 'products.how_works_section'
+                = form.fields_for :help_blocks do |block|
+                  = render partial: 'help_block_fields', locals: { f: block }
+                .links
+                  = link_to_add_association t('shared.add'), form, :help_blocks, class: 'btn btn-outline-secondary btn-sm mt-4'
+          .row
+            .col.mt-4
               = form.select :user_ids, User.all.collect {|u| [u.email, u.id]}, { include_blank: t('products.select_users') }, { multiple: true, size: 5, class: 'form-control' }
 
 
           .row
             .col.mt-4
-              %fieldset.bg-light.form-group#bloc
-                %legend= t 'product.how_works_section'
-                = form.fields_for :blocks do |block|
-                  = render 'block_fields', f: block
+              %fieldset.bg-light.form-group#services
+                %legend= t 'products.get_services'
+                = form.fields_for :service_blocks do |block|
+                  = render partial: 'service_block_fields', locals: { f: block }
                 .links
-                  = link_to_add_association t('shared.add'), form, :blocks, class: 'btn btn-outline-secondary btn-sm mt-4'
+                  = link_to_add_association t('shared.add'), form, :service_blocks, class: 'btn btn-outline-secondary btn-sm mt-4'
+
           .row
             .col.mt-4
               = form.submit class: 'btn btn-secondary'
