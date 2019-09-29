@@ -1,0 +1,24 @@
+%header
+  .container
+    %nav.navbar.navbar-expand-md.no-gutters
+      .col-3.text-left
+        = link_to root_path, class: 'text-danger h4' do
+          Products
+      %button.navbar-toggler{"aria-controls" => "navbarNav7", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => ".navbar-collapse-2", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      .collapse.navbar-collapse.navbar-collapse-2
+        - if user_signed_in?
+          %ul.navbar-nav.ml-auto.justify-content-end
+            %li.nav-item
+              .nav-link.text-muted
+                - if current_user.role? :admin
+                  %span.badge.badge-pill.badge-success.status-mark.mr-2{ title: t('shared.admin') } A
+                = current_user.email
+            %li.nav-item
+              = link_to t('devise.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          %ul.navbar-nav.ml-auto.justify-content-end
+            %li.nav-item
+              = link_to t('devise.login'), new_user_session_path, class: 'nav-link'
+            %li.nav-item
+              = link_to t('devise.register'), new_user_registration_path, class: 'nav-link'

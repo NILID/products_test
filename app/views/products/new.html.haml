@@ -1,0 +1,30 @@
+%section.fdb-block
+  .container
+    .row.justify-content-center
+      .col.text-center
+
+        = form_with(model: @product, local: true, html: { class: 'fdb-box fdb-touch' }) do |form|
+          .row
+            .col
+              .h2= t 'products.adding'
+
+          = render 'application/errors', object: @product
+
+          .row
+            .col.mt-4
+              = form.text_field :title, class: 'form-control', placeholder: Product.human_attribute_name(:title)
+          .row
+            .col.mt-4
+              = form.text_area :desc, class: 'form-control', placeholder: Product.human_attribute_name(:desc)
+          .row
+            .col.mt-4
+              %fieldset.bg-light.form-group#bloc
+                %legend= t 'product.how_works_section'
+                = form.fields_for :blocks do |block|
+                  = render 'block_fields', f: block
+                .links
+                  = link_to_add_association t('shared.add'), form, :blocks, class: 'btn btn-outline-secondary btn-sm mt-4'
+          .row
+            .col.mt-4
+              = form.submit class: 'btn btn-secondary'
+

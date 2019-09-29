@@ -1,0 +1,43 @@
+ru:
+  shared:
+    admin: Вы администратор
+    add: Добавить
+    remove: Удалить
+  devise:
+    logout: Выйти
+    login: Войти
+    register: Регистрация
+    to_register: Зарегистрироваться
+    no_confirmation: Не получили код подтверждения регистрации?
+    no_unlock: Не получили код разблокировки аккаунта?
+    forgot_password: Забыли пароль?
+    change_password: Смена пароля
+    change: Сменить
+    min_characters: минимум %{count} символов
+    send_reset_password: Получить инструкцию по сбросу пароля
+    send_confirmation: Получить инструкцию по подтверждению регистрации
+    send_unlock: Получить инструкцию по разблокировки аккаунта
+  products:
+    title: Продукты
+    add: Добавить продукт
+    adding: Добавление продукта
+    how_works_section: Как это работает
+  activerecord:
+    models:
+      product: продукт
+      block: блок
+      user: пользователь
+    attributes:
+      block:
+        content: Описание
+      product:
+        title: Название
+        desc: Описание
+      user:
+        login: Логин
+        password: Пароль
+        password_confirmation: Повторите пароль
+        current_password: Текущий пароль
+        created_at: Зарегистрировался
+        last_sign_in_at: Последнее посещение
+        sign_in_count: Количество посещений
