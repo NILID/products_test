@@ -5,6 +5,11 @@ RSpec.describe Product, type: :model do
   let(:product) { build(:product) }
 
   context 'should' do
+    it 'be valid by default' do
+      product.save!
+      expect(product.valid?).to be true
+      expect(product.errors).to be_empty
+    end
 
     it 'have title' do
       product.title = nil
@@ -33,5 +38,18 @@ RSpec.describe Product, type: :model do
       expect(Product::DEVICES).not_to include(product.device)
     end
 
+    it 'have users not more 3 users' do
+      users = create_list(:user, 4)
+      product.user_ids = users.pluck(:id)
+      expect(product.valid?).to be false
+      expect(product.errors[:users]).not_to be_empty
+    end
+
+    it 'have users 3 users' do
+      users = create_list(:user, 3)
+      product.user_ids = users.pluck(:id)
+      expect(product.valid?).to be true
+      expect(product.errors[:users]).to be_empty
+    end
   end
 end

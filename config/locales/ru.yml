@@ -26,6 +26,8 @@ ru:
     select_domain: == выберите домен ==
     select_device: == выберите устройство ==
     select_users: == выберите команду ==
+  messages:
+    command_to_much: не может быть больше %{count} пользователей
   activerecord:
     models:
       product: продукт
@@ -47,6 +49,7 @@ ru:
         domain: Домен
         devise: Устройство
         os: ОС
+        users: Команда
       user:
         login: Логин
         password: Пароль
