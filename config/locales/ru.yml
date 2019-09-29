@@ -22,6 +22,9 @@ ru:
     add: Добавить продукт
     adding: Добавление продукта
     how_works_section: Как это работает
+    select_os: == выберите OC ==
+    select_domain: == выберите домен ==
+    select_device: == выберите устройство ==
   activerecord:
     models:
       product: продукт

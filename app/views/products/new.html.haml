@@ -13,9 +13,17 @@
           .row
             .col.mt-4
               = form.text_field :title, class: 'form-control', placeholder: Product.human_attribute_name(:title)
+
           .row
             .col.mt-4
-              = form.text_area :desc, class: 'form-control', placeholder: Product.human_attribute_name(:desc)
+              = form.select :domain, Product::DOMAINS, include_blank: t('products.select_domain'), class: 'form-control'
+
+            .col.mt-4
+              = form.select :device, Product::DEVICES, include_blank: t('products.select_device'), class: 'form-control'
+
+            .col.mt-4
+              = form.select :os, Product::OS, include_blank: t('products.select_os'), class: 'form-control'
+
           .row
             .col.mt-4
               %fieldset.bg-light.form-group#bloc
