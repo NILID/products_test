@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "products/new", type: :view do
   before(:each) do
-    assign(:product, Product.new(
-      :title => "MyString"
-    ))
+    @product = build(:product)
   end
 
   it "renders new product form" do

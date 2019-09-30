@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "products/show", type: :view do
   before(:each) do
-    @product = assign(:product, Product.create!(
-      :title => "Title"
-    ))
+    @product = create(:product)
   end
 
   it "renders attributes in <p>" do
